@@ -17,10 +17,10 @@
 # Layout
 
 <p align="center">
-  <img alt="Main page (Dark)" src="https://cdn.discordapp.com/attachments/540362035616153600/807388911671443497/brave_AWxEMSK1eX.png" height="300" width="600">
-  <img alt="Main page (Light)" src="https://cdn.discordapp.com/attachments/540362035616153600/807388904104656906/brave_ZOSsxDGDj6.png" height="300" width="600">
-  <img alt="Add Transation page (Dark)" src="https://cdn.discordapp.com/attachments/540362035616153600/807392509080764442/brave_H0xQ9scpOL.png" height="300" width="600">
-  <img alt="Add Transation page (Light)" src="https://cdn.discordapp.com/attachments/540362035616153600/807392489136848916/unknown.png" height="300" width="600">
+  <img alt="Main page (Dark)" src="https://cdn.discordapp.com/attachments/540362035616153600/807388911671443497/brave_AWxEMSK1eX.png" height="100" width="200">
+  <img alt="Main page (Light)" src="https://cdn.discordapp.com/attachments/540362035616153600/807388904104656906/brave_ZOSsxDGDj6.png" height="100" width="200">
+  <img alt="Add Transation page (Dark)" src="https://cdn.discordapp.com/attachments/540362035616153600/807392509080764442/brave_H0xQ9scpOL.png" height="100" width="200">
+  <img alt="Add Transation page (Light)" src="https://cdn.discordapp.com/attachments/540362035616153600/807392489136848916/unknown.png" height="100" width="200">
 </p>
 
 # Clonar o projeto
