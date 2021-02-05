@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./assets/total.svg" type="image/x-icon">
   <title>dev.finance$</title>
 </head>
-
 <body>
   <header>
-    <img src="./assets/logo.svg" alt="Logo Dev Finance">
+    <img src="./assets/logo.svg" alt="Logo dev finances">
+
+    <div class="dark-mode">
+      <input type="checkbox" id="checkbox" class="checkbox">
+      <label for="checkbox" onclick="Theme.toggle()">
+        <img src="./assets/night.svg" alt="Ícone Lua" class="moon">
+        <img src="./assets/sun.svg" alt="Ícone Sol" class="sun">
+        <div class="ball"></div>
+      </label>
+    </div>
   </header>
 
   <main class="container">
     <section id="balance">
-      <h2 class="sr-only">Balanço</h2>
-
       <div class="card">
         <h3>
           <span>Entradas</span>
-          <img src="./assets/income.svg" alt="Imagem de Entradas">
+          <img src="./assets/income.svg" alt="Ícone Entradas">
         </h3>
         <p id="incomeDisplay">R$ 0,00</p>
       </div>
@@ -30,7 +36,7 @@
       <div class="card">
         <h3>
           <span>Saídas</span>
-          <img src="./assets/expense.svg" alt="Imagem de Saídas">
+          <img src="./assets/expense.svg" alt="Ícone Entradas">
         </h3>
         <p id="expenseDisplay">R$ 0,00</p>
       </div>
@@ -38,7 +44,7 @@
       <div class="card total">
         <h3>
           <span>Total</span>
-          <img src="./assets/total.svg" alt="Imagem de Entradas">
+          <img src="./assets/total.svg" alt="Ícone Total">
         </h3>
         <p id="totalDisplay">R$ 0,00</p>
       </div>
@@ -46,9 +52,8 @@
 
     <section id="transactions">
       <h2 class="sr-only">Transações</h2>
-
-      <a href="#" class="button new" onclick="Modal.toggle()">+ Nova Transação</a>
-
+      <a href="#" class="button new" onclick="Modal.toggle()">+ Nova transação</a>
+      
       <table id="data-table">
         <thead>
           <tr>
@@ -58,8 +63,8 @@
             <th></th>
           </tr>
         </thead>
-        <tbody>
-        </tbody>
+
+        <tbody></tbody>
       </table>
     </section>
   </main>
@@ -67,22 +72,20 @@
   <div class="modal-overlay">
     <div class="modal">
       <div id="form">
-        <h2>Nova Transação</h2>
+        <h2>Nova transação</h2>
         <form action="" onsubmit="Form.submit(event)">
           <div class="input-group">
-            <label class="sr-only" for="description">Descrição</label>
-            <input type="text" id="description" name="description" placeholder="Descrição">
+            <label for="description" class="sr-only">Descrição</label>
+            <input type="text" name="description" placeholder="Descrição" id="description">
           </div>
-
           <div class="input-group">
-            <label class="sr-only" for="amount">Valor</label>
-            <input type="number" id="amount" name="amount" placeholder="R$ 0,00" step="0.01">
+            <label for="amount" class="sr-only">Valor</label>
+            <input type="number" name="amount" placeholder="R$ 0,00" step="0.01" id="amount">
             <small>Use o sinal - (negativo) para despesas e , (vírgula) para casas decimais.</small>
           </div>
-
           <div class="input-group">
-            <label class="sr-only" for="date">Data</label>
-            <input type="date" id="date" name="date">
+            <label for="date" class="sr-only">Data</label>
+            <input type="date" name="date" id="date">
           </div>
 
           <div class="input-group actions">
@@ -94,9 +97,7 @@
     </div>
   </div>
 
-  <footer>
-    <p>dev.finance$</p>
-  </footer>
+  <footer>2021 - dev.finance$</footer>
 
   <script src="./scripts.js"></script>
 </body>

@@ -4,6 +4,12 @@ const Modal = {
   }
 }
 
+const Theme = {
+  toggle() {
+    document.querySelector('body').classList.toggle('dark');
+  }
+}
+
 const Storage = {
   get() {
     return JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
@@ -35,14 +41,14 @@ const Transaction = {
     Transaction.all.forEach(t => {t.amount > 0 ? income += t.amount : 0});
     return income;
   },
-  expanses() {
-    let expanse = 0;
+  expenses() {
+    let expense = 0;
 
-    Transaction.all.forEach(t => {t.amount < 0 ? expanse += t.amount : 0});
-    return expanse;
+    Transaction.all.forEach(t => {t.amount < 0 ? expense += t.amount : 0});
+    return expense;
   },
   total() {
-    return Transaction.incomes() + Transaction.expanses();
+    return Transaction.incomes() + Transaction.expenses();
   }
 }
 
@@ -58,7 +64,7 @@ const DOM = {
   },
 
   innerHtMLTransaction(transaction, index) {
-    const CSSclass = transaction.amount > 0 ? "income" : "expanse";
+    const CSSclass = transaction.amount > 0 ? "income" : "expense";
     
     const amount = Utils.formatCurrency(transaction.amount);
 
@@ -74,7 +80,7 @@ const DOM = {
 
   updateBalance() {
     document.getElementById('incomeDisplay').innerHTML = Utils.formatCurrency(Transaction.incomes());
-    document.getElementById('expenseDisplay').innerHTML = Utils.formatCurrency(Transaction.expanses());
+    document.getElementById('expenseDisplay').innerHTML = Utils.formatCurrency(Transaction.expenses());
     document.getElementById('totalDisplay').innerHTML = Utils.formatCurrency(Transaction.total());
   },
 
@@ -84,7 +90,7 @@ const DOM = {
 
 }
 
-const Utils = {
+const Utils = { 
   formatCurrency(value) {
     const signal = Number(value) < 0 ? "-" : "";
 
@@ -99,8 +105,8 @@ const Utils = {
   },
   
   formatAmount(value) {
-    value = Number(value) * 100;
-    return value;
+    value = value * 100;
+    return Math.round(value);
   },
 
   formatDate(date) {
@@ -162,9 +168,6 @@ const Form = {
     } catch(err) {
       alert(err.message);
     }
-
-/*     Form.formatData();
-    Form.saveData(); */
   }
 }
 
